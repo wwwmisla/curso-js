@@ -1,0 +1,44 @@
+html {
+    /* font-size: 20px; */
+    /* font-size: 100%;  O navegador deixa 16px normalmente*/
+    font-size: 62.5%; /* 62.5% de 16, ou seja 1rem vai se comportar como 10px*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.pai {
+    /* font-size: 50px; */
+    /* width: 100rem;
+    height: 30rem;  */
+    width: 50rem; /* vw - view port */
+    height: 100vh; /* vh - view port */
+    background: yellow;
+}
+
+.pai > div {
+    width: 50%;
+    height: 50rem;
+    background: blue;
+}
+
+p {
+    font-size: 1.6rem; 
+    /* EM -> Esse valor vezes o valor da font-size do elemento pai mais próximo dele;
+    REM   -> Esse valor vai se basear no elemento root (HTML) do documento.
+    */
+}
+
+.color-one {
+    background: turquoise;
+}
+
+.color-two {
+    background: violet;
+}
+
+/* a % é baseada no elemento pai */
+/* vmax e vmin, não escrevi nenhum código pq achei complidado e não acho que irei usar regularmente */

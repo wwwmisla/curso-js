@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    padding: 15px;
+}
+
+.grid::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid .col {
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+} 
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: #f00; /* ABCDEF123456789 - hexadecimal*/
+    background: rgb(0, 255, 0); /* 0 há 255 - rgb*/
+    background: rgba(0, 0, 0, 0.5); /* rgba, último coisinha para opacidade*/
+    background: hsl(0, 100%, 50%); /* hsl */
+    background: hsla(0, 100%, 50%, 5%); /* hsl */
+}
+
+/* p {
+    clear: both;
+} */
+
+p {
+    margin: 30px;
+    text-align: justify;
+}

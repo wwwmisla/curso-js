@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li::after {
+    content: ' - ';
+    background: red;
+    color: white;
+    display: block;
+}
+
+ul li::before {
+    content: ' - ';
+    background: blue;
+    color: white;
+    display: block;
+}
+
+p {
+    font-size: 24px;
+    text-align: justify;
+}
+
+p::first-letter {
+    font-size: 150px;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+p::first-line:not(.p-form-field) {
+    background-color: chocolate;
+}
+p::selection {
+    background-color: black;
+    color: white;
+}
+
+.form-field::placeholder {
+    color: red;
+}

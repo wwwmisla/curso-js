@@ -1,0 +1,23 @@
+/* 
+Especificidade CSS
+ID -> Classes, atribudos e pseudos-classes -> Elementos e pseudos-elementos
+1  -> 0                                    -> 0
+Regras: especificidade, empate, style, !important
+*/
+
+/* 100 */
+#p {
+    background: red;
+}
+/* 010 */
+.p {
+    background: yellow;
+}
+/* 110 */
+#p.p {
+    background: orange;
+}
+/* 111 */
+p#p.p{
+    background: blueviolet;
+}
