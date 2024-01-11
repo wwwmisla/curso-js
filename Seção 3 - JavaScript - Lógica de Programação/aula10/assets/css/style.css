@@ -17,6 +17,7 @@ body {
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
+    text-align: center;
 }
 
 .container {
@@ -64,5 +65,14 @@ small {
     font-style: italic;
     padding: 5px;
     border: 1px solid;
+    border-radius: 10px;
+}
+
+#relogio {
+    font-size: 90px;
+    margin: 0;
+    padding: 50px;
+    background-color: var(--primary-color);
+    color: #fff;
     border-radius: 10px;
 }

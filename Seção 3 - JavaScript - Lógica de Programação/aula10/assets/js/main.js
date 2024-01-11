@@ -1,3 +1,7 @@
+const diaTopo = document.querySelector('#dia-topo');
+const horario = document.querySelector('#relogio');
+const data = new Date();
+
 function getDiaSemanaTexto(diaSemana) {
     let diaSemanaTexto;
 
@@ -29,72 +33,77 @@ function getDiaSemanaTexto(diaSemana) {
     }
 }
 
-function getMesTexto(mesNumero) {
-    let mesTexto;
+function getNomeMes(numeroMes) {
+    let nomeMes;
 
-    switch (mesNumero) {
+    switch (numeroMes) {
         case 0:
-            mesTexto = 'Janeiro';
-            return mesTexto;
+            nomeMes = 'Janeiro';
+            return nomeMes;
         case 1:
             mesTexto = 'Fevereiro';
-            return mesTexto;
+            return nomeMes;
         case 2:
-            mesTexto = 'Março';
-            return mesTexto;
+            nomeMes = 'Março';
+            return nomeMes;
         case 3:
-            mesTexto = 'Abril';
-            return mesTexto;
+            nomeMes = 'Abril';
+            return nomeMes;
         case 4:
-            mesTexto = 'Maio';
-            return mesTexto;
+            nomeMes = 'Maio';
+            return nomeMes;
         case 5:
-            mesTexto = 'Junho';
-            return mesTexto;
+            nomeMes = 'Junho';
+            return nomeMes;
         case 6:
-            mesTexto = 'Julho';
-            return mesTexto;
+            nomeMes = 'Julho';
+            return nomeMes;
         case 7:
-            mesTexto = 'Agosto';
-            return mesTexto;
+            nomeMes = 'Agosto';
+            return nomeMes;
         case 8:
-            mesTexto = 'Setembro';
-            return mesTexto;
+            nomeMes = 'Setembro';
+            return nomeMes;
         case 9:
-            mesTexto = 'Outubro';
-            return mesTexto;
+            nomeMes = 'Outubro';
+            return nomeMes;
         case 10:
-            mesTexto = 'Novembro';
-            return mesTexto;
+            nomeMes = 'Novembro';
+            return nomeMes;
         case 11:
-            mesTexto = 'Dezembro';
-            return mesTexto;
+            nomeMes = 'Dezembro';
+            return nomeMes;
         default:
-            mesTexto = '';
-            return mesTexto;
+            nomeMes = '';
+            return nomeMes;
     }
 }
 
-const data = new Date();
+function zeroAEsquerda (num) {
+    return num >= 10 ? num : `0${num}`;
+}
 
-function setDiaSemanaAno() {
+function criaDia (data) {
     const diaSemana = data.getDay();
+    const numeroMes = data.getMonth();
     const diaSemanaTexto = getDiaSemanaTexto(diaSemana);
     const diaSemanaNumero = data.getDate();
-    const mesNumero = data.getMonth();
-    const mesTexto = getMesTexto(mesNumero);
+    const nomeMes = getNomeMes(numeroMes);
     const ano = data.getFullYear();
 
-    return `${diaSemanaTexto}, ${diaSemanaNumero} de ${mesTexto} de ${ano}`;
+    return `${diaSemanaTexto}, ${diaSemanaNumero} de ${nomeMes} de ${ano}`;
 }
 
-function setHorario() {
-    const hora = data.getHours();
-    const min = data.getMinutes();
-    const sec = data.getSeconds();
-    const ms = data.getMilliseconds();
+function criaRelogio(data) {
+    const hora = zeroAEsquerda(data.getHours());
+    const min = zeroAEsquerda(data.getMinutes());
+    const sec = zeroAEsquerda(data.getSeconds());
 
-    return `${hora}:${min}:${sec}:${ms}`
+    return `${hora}:${min}:${sec}`;
 }
 
-console.log(setDiaSemanaAno(), setHorario());
+diaTopo.innerHTML = '';
+horario.innerHTML = '';
+
+diaTopo.innerHTML = criaDia(data);
+horario.innerHTML = criaRelogio(data);
