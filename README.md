@@ -19,6 +19,8 @@
   Este é o repositório de todos os exemplos que usei no Curso de Javascript do básico ao avançado (https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado/).
 </p>
 
+<p>(https://github.com/luizomf/curso-js)</p>
+
 ## 👩‍💻 Conteúdos 
 
 - JavaScript Básico, Funcional e Orientado a Objetos (ES6+, front-end e back-end);
