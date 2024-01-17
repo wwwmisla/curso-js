@@ -6,4 +6,8 @@ function mostraHora () {
     });
 }
 
-console.log(mostraHora());
+function funcaoDoInterval(){
+    console.log(mostraHora());
+}
+
+setInterval(funcaoDoInterval, 1000);
