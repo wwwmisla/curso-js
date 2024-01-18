@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
 :root {
-    --primary-color: rgb(17, 86, 102);
-    --primary-color-darker: rgb(9, 48, 56);
-    --background-color: rgba(18, 89, 102, 0.356);
-    --background-color-darker: rgba(18, 89, 102, 0.178);
+    --color-gainsboro: #dcdcdc;
+    --color-lightgrey: #d3d3d3;
+    --color-silver: #c0c0c0;
+    --color-darkgray: #a9a9a9;
+    --color-gray: #808080;
+    --color-dimgray: #696969;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-snow: #fffafa;
+    --color-ghostwhite: #f8f8ff;
+    --color-whitesmoke: #f5f5f5;
 }
 
 * {
@@ -15,24 +22,29 @@
 body {
     margin: 0;
     padding: 0;
-    background: var(--background-color);
+    background: var(--color-white);
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
 }
 
 body.modo-escuro {
-    background-color: var(--primary-color);
+    background-color: var(--color-black);
+}
+
+body.modo-escuro .container {
+    box-shadow: 1px 4px 10px rgba(255, 255, 255, 0.164);
 }
 
 .container {
     max-width: 640px;
     margin: 50px auto;
-    background: #fff;
+    background: var(--color-white);
     padding: 20px;
     border-radius: 10px;
-    color: var(--primary-color);
+    color: var(--color-black);
     text-align: center;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header {
@@ -58,6 +70,32 @@ header #botao-alterar-tema {
     border: none;
 }
 
+.input-tarefa {
+    color: var(--color-black);
+    border-radius: 10px;
+    border: 2px solid var(--color-black);
+    padding: 5px;
+    width: 60%;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.705);
+}
+
+.btn-tarefa, .btn-del-all {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 10px;
+    border: 2px solid var(--color-black);
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.705);
+}
+
+.btn-tarefa:hover , .btn-del-all:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.705);
+}
+
 ul {
     padding: 0;
 }
@@ -66,56 +104,30 @@ li {
     list-style: none;
     padding: 10px;
     margin: 10px;
-    background-color: rgba(18, 89, 102, 0.356);
+    background-color: var(--color-black);
     border-radius: 10px;
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 li:hover {
     transform: scale(1.05);
-    background-color: rgba(18, 89, 102, 0.178);
-    border-radius: 10px;
-}
-
-.btn-tarefa, .btn-del-all {
-    background-color: white;
-    color: var(--primary-color);
-    border-radius: 10px;
-    border: 2px solid var(--primary-color);
-    padding: 5px;
-    cursor: pointer;
-    box-shadow: 1px 1px var(--primary-color-darker);
-}
-
-.btn-tarefa:hover , .btn-del-all:hover {
-    background-color: var(--primary-color-darker);
-    color: white;
-    border: 2px solid var(--primary-color-darker);
-    box-shadow: 1px 1px var(--primary-color-darker);
-}
-
-.input-tarefa {
-    color: var(--primary-color);
-    border-radius: 10px;
-    border: 2px solid var(--primary-color);
-    padding: 5px;
-    box-shadow: 1px 1px var(--primary-color-darker);
+    /* background-color: rgba(0, 0, 0, 0.800); */
 }
 
 .apagar {
     padding: 8px;
-    background-color: var(--primary-color);
+    background-color: var(--color-white);
     border-radius: 10px;
-    color: white;
+    color: var(--color-black);
     border: none;
     cursor: pointer;
 }
 
 .apagar:hover {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: red;
+    color: var(--color-white);
     border: 1px solid var(--primary-color);
 }
-
-
-
-

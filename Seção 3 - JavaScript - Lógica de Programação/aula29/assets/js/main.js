@@ -6,31 +6,42 @@
 - editar - 
 - limitar quantidade de tarefa - 
 - não pode repetir o nome - 
-- não pode enviar vazio - 
+- não pode enviar vazio - ok
 - enviar pelo enter - ok
 */
 
 const inputTarefa = document.querySelector('.input-tarefa');
 const btnTarefa = document.querySelector('.btn-tarefa');
+const btnApagarTudo = document.querySelector('.btn-del-all');
 const tarefas = document.querySelector('.tarefas');
 
+// Cria elemento li
 function criaLi() {
     const li = document.createElement('li');
     return li;
 }
 
+// Add tarefa com o enter
 inputTarefa.addEventListener('keypress', function(e) {
     if (e.keyCode === 13) {
-        if (!inputTarefa.value) return;
+        if (!inputTarefa.value) {
+            inputTarefa.style.border = '1px solid red';
+            alert('Digite algo para inserir na sua lista de tarefas!');
+
+            return;
+        }
+        
         criaTarefa(inputTarefa.value);
     }
 });
 
+// Limpa input depois que uma tarefa é enviada
 function limpaInput() {
     inputTarefa.value = '';
     inputTarefa.focus();
 }
 
+// Criação do botão apagar
 function criaBotaoApagar(li) {
     li.innerText += ' ';
     const botaoApagar = document.createElement('button');
@@ -41,7 +52,10 @@ function criaBotaoApagar(li) {
 
 }
 
+// Criação de uma nova tarefa
 function criaTarefa(textoInput) {
+    inputTarefa.style.border = '2px solid var(--color-black)';
+
     const li = criaLi();
     li.innerText = textoInput;
     li.setAttribute('class', 'li');
@@ -52,10 +66,17 @@ function criaTarefa(textoInput) {
 }
 
 btnTarefa.addEventListener('click', function(){
-    if (!inputTarefa.value) return;
+    if (!inputTarefa.value) {
+        inputTarefa.style.border = '1px solid red';
+        alert('Digite algo para inserir na sua lista de tarefas!');
+
+        return ;
+    }
+    
     criaTarefa(inputTarefa.value);
 });
 
+// Apagar tarefa
 document.addEventListener('click', function(e) {
     const el = e.target;
     
@@ -66,6 +87,7 @@ document.addEventListener('click', function(e) {
 
 });
 
+// Salvar tarefas no localStorage
 function salvarTarefas() {
     const liTarefas = tarefas.querySelectorAll('li');
     const listaDeTarefas = [];
