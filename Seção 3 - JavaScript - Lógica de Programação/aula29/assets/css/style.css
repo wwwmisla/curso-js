@@ -3,6 +3,8 @@
 :root {
     --primary-color: rgb(17, 86, 102);
     --primary-color-darker: rgb(9, 48, 56);
+    --background-color: rgba(18, 89, 102, 0.356);
+    --background-color-darker: rgba(18, 89, 102, 0.178);
 }
 
 * {
@@ -13,10 +15,14 @@
 body {
     margin: 0;
     padding: 0;
-    background: var(--primary-color);
+    background: var(--background-color);
     font-family: 'Open sans', sans-serif;
     font-size: 1.3em;
     line-height: 1.5em;
+}
+
+body.modo-escuro {
+    background-color: var(--primary-color);
 }
 
 .container {
@@ -29,37 +35,45 @@ body {
     text-align: center;
 }
 
-form input,
-form label,
-form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 }
 
-form input {
-    font-size: 24px;
+header img {
     height: 50px;
-    padding: 0 20px;
+    width: 50px;
 }
 
-form input:focus {
-    outline: 1px solid var(--primary-color);
-}
-
-form button {
-    border: none;
-    background: var(--primary-color);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    height: 50px;
+header img:hover {
+    transform: scale(1.05);
     cursor: pointer;
-    margin-top: 30px;
 }
 
-form button:hover {
-    background: var(--primary-color-darker);
+header #botao-alterar-tema {
+    background: none;
+    border: none;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(18, 89, 102, 0.356);
+    border-radius: 10px;
+}
+
+li:hover {
+    transform: scale(1.05);
+    background-color: rgba(18, 89, 102, 0.178);
+    border-radius: 10px;
 }
 
 .btn-tarefa, .btn-del-all {
@@ -102,17 +116,6 @@ form button:hover {
     border: 1px solid var(--primary-color);
 }
 
-li {
-    list-style: none;
-    padding: 10px;
-    margin: 10px;
-    background-color: rgba(18, 89, 102, 0.356);
-    border-radius: 10px;
-    cursor: pointer;
-}
 
-li:hover {
-    background-color: rgba(18, 89, 102, 0.178);
-    border-radius: 10px;
-}
+
 
