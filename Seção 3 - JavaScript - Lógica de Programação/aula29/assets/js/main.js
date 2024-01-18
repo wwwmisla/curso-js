@@ -1,3 +1,15 @@
+/* 
+- inserir tarefa - ok 
+- deletar uma tarefa - ok
+- deletar todas as tarefas - 
+- marcar como concluída - 
+- editar - 
+- limitar quantidade de tarefa - 
+- não pode repetir o nome - 
+- não pode enviar vazio - 
+- enviar pelo enter - ok
+*/
+
 const inputTarefa = document.querySelector('.input-tarefa');
 const btnTarefa = document.querySelector('.btn-tarefa');
 const tarefas = document.querySelector('.tarefas');
@@ -23,7 +35,6 @@ function criaBotaoApagar(li) {
     li.innerText += ' ';
     const botaoApagar = document.createElement('button');
     botaoApagar.innerText = 'Apagar';
-    // botaoApagar.classList.add('apagar');
     botaoApagar.setAttribute('class', 'apagar');
     botaoApagar.setAttribute('title', 'Apagar esta tarefa.');
     li.appendChild(botaoApagar);
@@ -33,6 +44,7 @@ function criaBotaoApagar(li) {
 function criaTarefa(textoInput) {
     const li = criaLi();
     li.innerText = textoInput;
+    li.setAttribute('class', 'li');
     tarefas.appendChild(li);
     limpaInput();
     criaBotaoApagar(li);
@@ -50,7 +62,7 @@ document.addEventListener('click', function(e) {
     if (el.classList.contains('apagar')) {
         el.parentElement.remove();
         salvarTarefas();
-    }
+    }   
 
 });
 

@@ -25,6 +25,8 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
+    color: var(--primary-color);
+    text-align: center;
 }
 
 form input,
@@ -59,3 +61,58 @@ form button {
 form button:hover {
     background: var(--primary-color-darker);
 }
+
+.btn-tarefa, .btn-del-all {
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px var(--primary-color-darker);
+}
+
+.btn-tarefa:hover , .btn-del-all:hover {
+    background-color: var(--primary-color-darker);
+    color: white;
+    border: 2px solid var(--primary-color-darker);
+    box-shadow: 1px 1px var(--primary-color-darker);
+}
+
+.input-tarefa {
+    color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    padding: 5px;
+    box-shadow: 1px 1px var(--primary-color-darker);
+}
+
+.apagar {
+    padding: 8px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.apagar:hover {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(18, 89, 102, 0.356);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: rgba(18, 89, 102, 0.178);
+    border-radius: 10px;
+}
+
